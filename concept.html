@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le concept LégaleInk — panneaux e-ink pour l'affichage légal obligatoire. Fonctionnement, sécurité, évolutivité.">
+  <title>Le concept — LégaleInk</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=Syne+Mono&display=swap">
+  <style>
+    .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .spec-cell { background: var(--white); padding: 1.25rem; }
+    .spec-cell .spec-key { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .35rem; }
+    .spec-cell .spec-val { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+    .spec-cell .spec-val.green { color: var(--green); }
+    .arch-row { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 1rem; }
+    .arch-row:last-child { margin-bottom: 0; }
+    .arch-step { font-family: var(--font-mono); font-size: .62rem; color: var(--green); letter-spacing: .15em; text-transform: uppercase; flex-shrink: 0; width: 56px; }
+    .arch-arrow { color: var(--border-2); flex-shrink: 0; }
+    .arch-row h4 { font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
+    .arch-row p { font-size: .82rem; color: var(--ink-2); }
+    .conn-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: .35rem .85rem; border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-family: var(--font-mono); font-size: .62rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--ink-2);
+    }
+    .conn-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-text">Légale<span>Ink</span></span>
+      <span class="nav-badge">Concept</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="concept.html" class="active">Le concept</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Nous contacter</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="mono">Présentation technique</span>
+    <h1>Le concept<br><em>LégaleInk.</em></h1>
+    <p>Architecture, fonctionnement, sécurité, évolutivité — tout ce qu'un investisseur ou partenaire technique doit savoir.</p>
+  </div>
+</div>
+
+<!-- SPECS -->
+<section>
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="label">Spécifications technique</span>
+      <h2>Le panneau e-ink,<br>conçu pour durer.</h2>
+      <div class="rule-green" style="margin:.75rem 0;"></div>
+    </div>
+    <div class="spec-grid" data-reveal>
+      <div class="spec-cell">
+        <div class="spec-key">Consommation repos</div>
+        <div class="spec-val green">~0 W</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Consommation màj</div>
+        <div class="spec-val">< 0.5 W</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Durée de vie</div>
+        <div class="spec-val green">10+ ans</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Angle de vision</div>
+        <div class="spec-val">180°</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Lisibilité soleil</div>
+        <div class="spec-val green">Excellente</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Émission lumineuse</div>
+        <div class="spec-val">Aucune</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Format</div>
+        <div class="spec-val">A3 – A1</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Résolution</div>
+        <div class="spec-val">300 DPI</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-key">Température op.</div>
+        <div class="spec-val">−10 à 60 °C</div>
+      </div>
+    </div>
+
+    <!-- CONNEXIONS -->
+    <div style="margin-top:3rem;" data-reveal>
+      <span class="label" style="display:block;margin-bottom:1rem;">Modes de connexion disponibles</span>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+        <div class="conn-badge"><span class="dot"></span>Wi-Fi 2.4 / 5 GHz</div>
+        <div class="conn-badge"><span class="dot"></span>RJ45 / Ethernet</div>
+        <div class="conn-badge"><span class="dot"></span>Carte SIM 4G / LTE</div>
+        <div class="conn-badge"><span class="dot"></span>Bluetooth LE (config locale)</div>
+        <div class="conn-badge"><span class="dot"></span>Hors-ligne (stockage local)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section style="background:var(--cream-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;align-items:flex-start;">
+      <div data-reveal>
+        <span class="label">Architecture système</span>
+        <h2 style="margin-top:.75rem;">Du cloud<br>au panneau.</h2>
+        <div class="rule-green" style="margin:.75rem 0 1.5rem;"></div>
+        <p style="color:var(--ink-2);margin-bottom:1.5rem;font-size:.95rem;">La chaîne LégaleInk repose sur une architecture en trois couches : la plateforme SaaS de gestion, l'infrastructure réseau sécurisée et le firmware embarqué dans les panneaux.</p>
+        <a href="contact.html" class="btn btn-primary" style="font-size:.85rem;padding:.75rem 1.5rem;">Demander un dossier technique</a>
+      </div>
+      <div data-reveal data-delay="1">
+        <div class="arch-row">
+          <span class="arch-step">Layer 1</span>
+          <svg class="arch-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          <div>
+            <h4>Plateforme SaaS</h4>
+            <p>Interface web RH / admin. Éditeur de contenu, bibliothèque documentaire, gestion des panneaux et planification des diffusions.</p>
+          </div>
+        </div>
+        <div class="arch-row">
+          <span class="arch-step">Layer 2</span>
+          <svg class="arch-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          <div>
+            <h4>Réseau sécurisé</h4>
+            <p>Protocoles WPA3, TLS 1.3, VPN optionnel. Chiffrement de bout en bout entre la plateforme et chaque panneau. Authentification par certificat.</p>
+          </div>
+        </div>
+        <div class="arch-row">
+          <span class="arch-step">Layer 3</span>
+          <svg class="arch-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          <div>
+            <h4>Firmware panneau</h4>
+            <p>OS embarqué léger, rendu local des documents, cache hors-ligne, reporting d'état et journalisation des affichages (traçabilité légale).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FONCTIONNALITÉS -->
+<section>
+  <div class="container">
+    <div class="section-header centered" data-reveal>
+      <span class="label">Fonctionnalités clés</span>
+      <h2>Ce que LégaleInk<br>fait concrètement.</h2>
+      <div class="rule-green" style="margin:.75rem auto 0;"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div class="concept-feature" data-reveal data-delay="1">
+        <div class="concept-feature-num">01</div>
+        <div>
+          <h3>Mises à jour à distance</h3>
+          <p>Le responsable RH publie un document depuis la plateforme web. Le panneau reçoit la mise à jour en quelques secondes, sans intervention physique. File d'attente, planification différée et confirmation de réception disponibles.</p>
+          <span class="badge" style="margin-top:.5rem;">Temps réel</span>
+        </div>
+      </div>
+      <div class="concept-feature" data-reveal>
+        <div class="concept-feature-num">02</div>
+        <div>
+          <h3>Base documentaire légale</h3>
+          <p>La plateforme inclut une bibliothèque des obligations d'affichage obligatoires du Code du travail (affichage syndical, représentants du personnel, horaires, tarif des heures supplémentaires, médecine du travail, harcèlement…). Mise à jour par notre équipe juridique.</p>
+          <span class="badge" style="margin-top:.5rem;">Code du travail</span>
+        </div>
+      </div>
+      <div class="concept-feature" data-reveal>
+        <div class="concept-feature-num">03</div>
+        <div>
+          <h3>Connexion hybride flexible</h3>
+          <p>RJ45, Wi-Fi ou 4G au choix selon l'infrastructure de l'organisation. Fonctionnement hors-ligne en cas de coupure réseau : le panneau continue d'afficher le dernier contenu validé.</p>
+          <span class="badge" style="margin-top:.5rem;">Wi-Fi · RJ45 · 4G</span>
+        </div>
+      </div>
+      <div class="concept-feature" data-reveal>
+        <div class="concept-feature-num">04</div>
+        <div>
+          <h3>Sécurité et confidentialité</h3>
+          <p>Chiffrement WPA3 pour le Wi-Fi, TLS 1.3 pour les communications API, VPN intégrable. Authentification forte pour l'accès à la plateforme (2FA). Journalisation complète pour audit.</p>
+          <span class="badge" style="margin-top:.5rem;">WPA3 · TLS 1.3 · VPN</span>
+        </div>
+      </div>
+      <div class="concept-feature" data-reveal>
+        <div class="concept-feature-num">05</div>
+        <div>
+          <h3>Traçabilité légale</h3>
+          <p>Chaque affichage est horodaté et journalisé. En cas de contrôle, l'employeur peut produire un historique complet prouvant que les obligations d'affichage ont été respectées à tout moment.</p>
+          <span class="badge" style="margin-top:.5rem;">Audit trail</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÉVOLUTIVITÉ -->
+<section style="background:var(--cream-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="label">Vision produit</span>
+      <h2>La roadmap d'évolution.</h2>
+      <div class="rule-green" style="margin:.75rem 0;"></div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="timeline" data-reveal>
+          <div class="timeline-item">
+            <span class="timeline-num">V1 — MVP</span>
+            <div class="timeline-body">
+              <h3>Panneau e-ink + plateforme web</h3>
+              <p>Gestion centralisée, base documentaire légale, Wi-Fi / RJ45. Déploiement pilote PME et collectivités.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-num">V2</span>
+            <div class="timeline-body">
+              <h3>Application mobile RH</h3>
+              <p>Mise à jour des panneaux depuis smartphone. Notifications d'expiration documentaire. Dashboard mobile.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-num">V3</span>
+            <div class="timeline-body">
+              <h3>Module audio</h3>
+              <p>Diffusion sonore complémentaire pour les annonces urgentes ou les espaces à forte circulation.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-num">V4</span>
+            <div class="timeline-body">
+              <h3>API & connecteurs RH</h3>
+              <p>Intégration native avec les SIRH leaders (Lucca, Sage, SAP HCM). Synchronisation automatique des données salariales et organisationnelles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-reveal data-delay="1">
+        <div class="invest-block" style="margin-top:0;">
+          <span class="label" style="display:block;margin-bottom:.75rem;">Modèle économique</span>
+          <h2 style="font-size:1.5rem;margin-bottom:1rem;">SaaS + Hardware</h2>
+          <ul class="invest-list">
+            <li>Vente ou location du panneau (hardware) à l'installation</li>
+            <li>Abonnement mensuel SaaS par panneau (gestion, base documentaire, support)</li>
+            <li>Tier entreprise : gestion multi-sites, API, SSO, SLA garanti</li>
+            <li>Module conformité premium : alertes réglementaires proactives</li>
+          </ul>
+          <div style="background:var(--cream);border-radius:var(--radius);padding:1.25rem;margin-top:1.5rem;">
+            <div class="label" style="margin-bottom:.5rem;">LTV estimée / client PME (50 sal.)</div>
+            <div style="font-family:var(--font-serif);font-size:2rem;font-weight:700;color:var(--green);">+12 000 €</div>
+            <div style="font-size:.8rem;color:var(--ink-3);">Sur 5 ans · 3 panneaux · abonnement 60 €/panneau/mois</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container">
+    <span class="label" style="color:rgba(255,255,255,.7);">Prêt à discuter ?</span>
+    <h2>Ce concept mérite<br>d'exister.</h2>
+    <p>Je suis ouvert à toute discussion — investissement, partenariat technologique, déploiement pilote ou simple retour sur le concept.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-white">Prendre contact</a>
+      <a href="about.html" class="btn btn-outline-white">À propos du projet</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span style="font-family:var(--font-serif);font-size:1.15rem;font-weight:700;">Légale<span style="color:var(--green-2);font-style:italic;">Ink</span></span>
+        <p>Concept d'affichage légal e-ink — éco-responsable, économique, conforme.</p>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><a href="index.html">Accueil</a><a href="about.html">À propos</a><a href="concept.html">Le concept</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Légal</h4><a href="privacy.html">Mentions légales</a><a href="privacy.html#rgpd">Confidentialité</a><a href="privacy.html#cgu">CGU</a></div>
+      <div class="footer-col"><h4>Réseaux</h4><a href="https://www.linkedin.com/in/shamsguettaf/" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/shamsetdean" target="_blank" rel="noopener">X / Twitter</a><a href="https://github.com/shamsetdean/sentinel" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 LégaleInk — Concept de Shams Guettaf. Tous droits réservés.</span>
+      <span><a href="privacy.html">Mentions légales</a> · <a href="privacy.html#rgpd">RGPD</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
